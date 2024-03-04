@@ -1,3 +1,3 @@
-message = "Hello world!"
+message = "Hello blue world!"
 print(message)
 
