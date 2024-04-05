@@ -1,0 +1,40 @@
+- Log into ESXi.
+- Create new vm.
+   - Click ```Virtual Machines```
+   - Click <code>Create / Register VM</code>
+- Configure name and os version.
+- Select storage (default: ESX##_NVMe)
+- Customize hardware.
+   - Network adapter to ```VM_Network``` (Later will be the other.)
+   - CD/DVD drive to ```Datastore ISO```
+      - Select OS you want to install. (Rocky v8.9)
+- Install Rocky
+   - Configure Installation Destination.
+   - Configure Network.
+      - IP: <code>172.16.<Stud#>.<IP></code>
+      - SNM: /24
+      - GW: <code>172.16.<Stud#>.254</code>
+      - DNS: <code>10.200.99.30,10.200.99.31</code>
+   - Configure Software Selection.
+      - For now select:
+         - ```Network File System Client```
+         - ```Development Tools```
+         - ```Headless Management```
+         - ```RPM Dev Tools```
+         - ```System Tools```
+   - Configure Root Password
+      - Click ```Root Password``` in the lower left
+      - Enter desired password
+   - Configure User Creation
+      - Click ```User Creation```
+      - Enter Full Name, Username, and Password
+   - Reboot
+   - Configure NTP
+      - Edit <code>chrony.conf</code> file
+         - <code>sudo <EDITOR (nano/vim)> /etc/chrony.conf</code>
+         - remove <code>pool 2.rhel.pool.ntp.org iburst</code>
+         - add <code>server 44.44.44.10 iburst</code>
+         - restart chronyd <code>systemctl restart chronyd.service</code>
+         - verify <code>chronyc sources</code> AND <code>chronyc tracking</code>
+    - Update packages
+      - ```sudo dnf update -y```

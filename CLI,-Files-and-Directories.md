@@ -1,0 +1,44 @@
+**Commands:**
+
+- **hostname:** displays hostname
+- **whoami:** displays the current user
+- **ip address show:** displays IP address (also can be ip a)
+- **su:** switch user, the default user is root, and requires the su account password
+- **sudo:** allows user to execute system commands with root privileges (if authorized, provide user password)
+- **ls:** list all files and directories in the present working directory. Parameters can be combined.
+     - **ls -a:** shows all files (including hidden . and .. directories)
+     - **ls -A:** shows all files (does not include hidden . and .. directories)
+     - **ls -l:** displays detailed results (long format)
+- **cd:** navigates directories
+     - **cd ~/:** navigates to the home directory
+     - **cd ..:** navigates to the previous directory (up one level, ../.. would move two)
+     - **cd /:** navigates to the root directory
+- **pwd:** displays the current directory the user is currently working in
+- **echo:** can be used to display line of text/string, can also be used to put output into a file
+     - ("") and (\) are 2 characters that allow the use of special characters within a line
+     - **echo $PATH:** shows all paths in which commands can be executed
+- **cat:** can be used to display line of text/string from a file
+- **touch:** creates a file (can be used to create multiple files)
+     - **touch -c:** used to check whether a file is created
+- **rm:** deletes file or folder specified
+     - **rm -rf:** force removes a file
+     - **rm *:** remove all files in given directory
+- **cp:** used to copy files or directories
+     - **cp -b:** creates a backup of the file
+- **>:** use to output the result of commands to another location (will overwrite)
+     - **>>:** use to output the result of commands to another location (will append)
+     - **2>:** redirects the error of an output to a file
+     - **2>&1:** both standard error and standard output get redirected to the same file
+- **<:** use to input a different source into a command
+- **mkdir:** creates a directory
+     - **mkdir -v:** displays a message for every directory created
+     - **mkdir -p:** flag which enables the command to create parent directories as necessary (mkdir - p first/second/third)
+- **tree:** produces a depth-indented listing of files
+     - **tree -a:** all files are printed
+     - **tree -d:** list directories only
+     - **tree -f:** prints the full path prefix for each file
+- **mv:** is used to move one or more files or directories or rename
+     - **mv -f:** prompts for confirmation overwriting the destination file if a file is write-protected
+     - **mv -i:** makes the command ask user for confirmation before moving a file the would overwrite an existing file
+     - **mv -r:** remove a non-empty directory
+- **mv:** is used to move one or more files or directories or rename
